@@ -21,3 +21,6 @@ const board = [
 ];
 
 print_boards(board, right(board));
+print_boards(right(board), left(right(board)));
+print_boards(left(right(board)), up(left(right(board))));
+print_boards(up(left(right(board))), down(up(left(right(board)))));
