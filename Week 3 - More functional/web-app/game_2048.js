@@ -64,4 +64,26 @@ game_2048.up = compose(transpose, game_2048.left, transpose);
 
 game_2048.down = compose(transpose, game_2048.right, transpose);
 
+// Calculate the score of a board
+game_2048.score = function (board) {
+    const board_array = board[0].concat(board[1], board[2], board[3]);
+    return board_array.reduce((acc, current) => acc + 2 ** current);
+};
+
+// Create new board
+game_2048.new_board = () => [
+    [0, 0, 0, 0],
+    [0, 0, 0, 0],
+    [0, 0, 0, 0],
+    [0, 0, 0, 0]
+];
+
+// Check for valid moves
+game_2048.any_valid_moves = function (board) {
+    if (board.left === board && board.right === board && board.up === board && board.down === board) {
+        return false;
+    }
+    return true;
+};
+
 export default Object.freeze(game_2048);
