@@ -19,6 +19,12 @@ const add_n = curry(add);
 //    };
 //};
 
+// const add_n = function (n) {
+//     return (x) => x + n;
+// };
+
+const add_n = (n) => (x) => x + n;
+
 const add_3 = add_n(3);
 
 const twice = function (f) {
